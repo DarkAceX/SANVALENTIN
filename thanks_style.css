@@ -1,0 +1,125 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom right, #ff9a9e, #fad0c4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 2s ease-in-out;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #ff4d6d;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.thanks-page {
+    position: relative;
+    overflow: hidden;
+}
+
+.photo-frame {
+    display: inline-block;
+    margin-top: 20px;
+    width: 10cm;
+    height: 15cm;
+    border: 10px solid #fff;
+    border-radius: 5px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    background: #fff;
+}
+
+img.photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 3px;
+}
+
+.footer {
+    margin-top: 20px;
+    font-style: italic;
+    color: #555;
+}
+
+/* Efectos de corazones cayendo */
+.hearts::before,
+.hearts::after {
+    content: '❤️';
+    position: absolute;
+    top: -10%;
+    animation: fall 5s linear infinite;
+    font-size: 2rem;
+    opacity: 0.8;
+}
+
+.hearts::before {
+    left: 25%;
+    animation-delay: 0s;
+}
+
+.hearts::after {
+    left: 75%;
+    animation-delay: 2.5s;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10%) scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(50%) scale(1.2);
+    }
+    100% {
+        transform: translateY(110%) scale(0.8);
+        opacity: 0;
+    }
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .photo-frame {
+        width: 80%;
+        height: auto;
+    }
+
+    img.photo {
+        border-radius: 3px;
+    }
+
+    .footer {
+        font-size: 0.9rem;
+    }
+
+    .hearts::before,
+    .hearts::after {
+        font-size: 1.5rem;
+    }
+}
+
